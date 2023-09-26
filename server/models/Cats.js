@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const catSchema = new Schema({
+  
   name: {
     type: String,
     required: true,
@@ -24,6 +25,10 @@ const catSchema = new Schema({
   age:{
     type: Number,
     required: true,
+  },
+  bodyCondition: {
+    type: Number,
+    required: true
   }
 });
 

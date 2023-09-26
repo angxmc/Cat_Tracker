@@ -34,7 +34,7 @@ export default function SignUpForm({ setUser }) {
       console.log(userFormData);
 
       //calling user service signup function
-      const user = await signUp(userFormData);
+      const user = await signUp(formData);
       console.log("USER", user);
       setUser(user);
     } catch (error) {

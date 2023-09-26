@@ -1,10 +1,35 @@
+import axios from "axios";
 import React from "react";
 
+
 export default function CreateCat() {
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+   
+    const formData = new FormData(event.target);
+    const catData = {};
+    formData.forEach((value, key) => {
+      catData[key] = value;
+    });
+
+    //sends to backend
+    axios
+      .post("/api/cats/new", catData)
+      .then((res) => {
+        
+        console.log("Cat added:", res.data);
+        
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error adding cat:", error);
+      });
+  };
   return (
     <div>
       <h1>Build Your Cat Portfolio</h1>
-      <form action="/api/cats" method="POST">
+      <form onSubmit={handleSubmit} action="/api/cats" method="POST">
         <div>
           <label>Name</label>
           <input type="text" name="name" required />
@@ -70,19 +95,19 @@ export default function CreateCat() {
         <div>
           <label> Gender:</label>
 
-          <label for="male">Male</label>
+          <label htmlFor="male">Male</label>
           <input type="radio" name="gender" value="male" id="male" />
-          <label for="female">Female</label>
-          <input type="radio" name="gender" value="male" id="female" />
+          <label htmlFor="female">Female</label>
+          <input type="radio" name="gender" value="female" id="female" />
         </div>
 
         <div>
           <label>Neutered/Spayed: </label>
 
-          <label for="yes">Yes</label>
+          <label htmlFor="yes">Yes</label>
           <input type="radio" name="fixed" value="true" id="yes" />
 
-          <label for="no">No</label>
+          <label htmlFor="no">No</label>
           <input type="radio" name="fixed" value='false' id="no" />
         </div>
 
@@ -93,6 +118,12 @@ export default function CreateCat() {
         <div>
           <label>Age (years)</label>
           <input type="number" name="age" required/>
+        </div>
+
+        <div>
+          <label>Cat Body Condition</label>
+          <a href="https://wsava.org/WSAVA/media/Documents/Committee%20Resources/Global%20Nutrition%20Committee/English/Body-Condition-Score-cat.pdf"> Need help determining?</a>
+          <input type="number" name="bodyCondition" required/>
         </div>
 
         <input type="submit" value='ADD'/>
