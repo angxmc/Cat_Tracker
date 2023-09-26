@@ -1,8 +1,11 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function CreateCat() {
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission
 
@@ -19,6 +22,8 @@ export default function CreateCat() {
       .then((res) => {
         
         console.log("Cat added:", res.data);
+
+        navigate('/cats');
         
       })
       .catch((error) => {
