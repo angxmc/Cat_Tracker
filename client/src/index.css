@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Noto+Color+Emoji&family=Noto+Sans:ital,wght@0,200;0,500;1,500&family=Nova+Mono&display=swap');
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
  :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans',
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

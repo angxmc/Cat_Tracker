@@ -27,10 +27,10 @@ export default function LoginForm({setUser}) {
     }
   }
   return (
-    <div>
-      <h1>Login</h1>
-      <div className="form-container" onSubmit={handleSubmit}>
-        <form autoComplete="off">
+    <div className="m-5 flex-column">
+      <h1 className="font-mono">Start Tracking! </h1>
+      <div className="form-container m-2 " onSubmit={handleSubmit}>
+        <form autoComplete="off" className="flex-col space-x-5">
           <label>Email</label>
           <input
             type="text"

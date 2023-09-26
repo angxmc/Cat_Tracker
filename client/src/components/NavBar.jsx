@@ -17,7 +17,7 @@ const navigation = [
   { name: "Cat", href: "/cats", current: false },
   { name: "Add Cat", href: "/cats/new", current: false },
   { name: "Shop", href: "/cats/shop", current: false },
-  { name: "LogOut", href: "#", current: false },
+  { name: "Blog", href: "#", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -36,8 +36,7 @@ export default function NavBar({user, setUser}) {
    };
   return (
     <nav>
-      <h1>Welcome, {user.name}</h1>
-      <div>
+      <div className="m-2 p-2 space-x-5 ">
         <Link to="/">Home</Link>
         <Link to="/cats">Cats</Link>
         <Link to="/cats/shop">Shop</Link>
@@ -223,7 +222,7 @@ export default function NavBar({user, setUser}) {
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              Dashboard
+              Welcome, {user.name}
             </h1>
           </div>
         </header>

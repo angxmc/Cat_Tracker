@@ -47,10 +47,15 @@ export default function SignUpForm({ setUser }) {
   };
 
   return (
-    <div>
-      <h1>Sign Up Form</h1>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
+    <div className=" m-5 content-center justify-center content-around items-center">
+      <h1 className="font-mono">Help Your Cat Stay Healthy</h1>
+      <p className="font-emoji">😻</p>
+      <div className="border-2 rounded m-2 p-5  ">
+        <form
+          className="flex-col  m-2"
+          autoComplete="off"
+          onSubmit={handleSubmit}
+        >
           <label>Name</label>
           <input
             type="text"

@@ -33,14 +33,19 @@ export default function CreateCat() {
   };
   return (
     <div>
-      <h1>Build Your Cat Portfolio</h1>
-      <form onSubmit={handleSubmit} action="/api/cats" method="POST">
-        <div>
-          <label>Name</label>
+      <h1 className="font-cursiveH">Build Your Cat Portfolio</h1>
+      <form
+        onSubmit={handleSubmit}
+        action="/api/cats"
+        method="POST"
+        className="p-2 m-5 font-noto"
+      >
+        <div className="m-2 p-2 flex-row space-x-2">
+          <label>Name: </label>
           <input type="text" name="name" required />
         </div>
-        <div>
-          <label>Breed</label>
+        <div className="m-2 p-2 flex-row space-x-2">
+          <label>Breed: </label>
           <select name="breed" required>
             <option>Domestic Shorthair </option>
             <option>Siamese </option>
@@ -97,8 +102,8 @@ export default function CreateCat() {
           </select>
         </div>
 
-        <div>
-          <label> Gender:</label>
+        <div className="m-2 p-2 flex-row space-x-2">
+          <label> Gender: </label>
 
           <label htmlFor="male">Male</label>
           <input type="radio" name="gender" value="male" id="male" />
@@ -106,32 +111,35 @@ export default function CreateCat() {
           <input type="radio" name="gender" value="female" id="female" />
         </div>
 
-        <div>
+        <div className="m-2 p-2 flex-row space-x-2">
           <label>Neutered/Spayed: </label>
 
           <label htmlFor="yes">Yes</label>
           <input type="radio" name="fixed" value="true" id="yes" />
 
           <label htmlFor="no">No</label>
-          <input type="radio" name="fixed" value='false' id="no" />
+          <input type="radio" name="fixed" value="false" id="no" />
         </div>
 
-        <div>
-          <label>Weight (lb) </label>
-          <input type="number" name="weight" required/>
+        <div className="m-2 p-2 flex-row space-x-2">
+          <label>Weight (lb): </label>
+          <input type="number" name="weight" required />
         </div>
-        <div>
-          <label>Age (years)</label>
-          <input type="number" name="age" required/>
-        </div>
-
-        <div>
-          <label>Cat Body Condition</label>
-          <a href="https://wsava.org/WSAVA/media/Documents/Committee%20Resources/Global%20Nutrition%20Committee/English/Body-Condition-Score-cat.pdf"> Need help determining?</a>
-          <input type="number" name="bodyCondition" required/>
+        <div className="m-2 p-2 flex-row space-x-2">
+          <label>Age (years): </label>
+          <input type="number" name="age" required />
         </div>
 
-        <input type="submit" value='ADD'/>
+        <div className="m-2 p-2 flex-row space-x-2">
+          <label>Cat Body Condition: </label>
+          <a href="https://wsava.org/WSAVA/media/Documents/Committee%20Resources/Global%20Nutrition%20Committee/English/Body-Condition-Score-cat.pdf">
+            {" "}
+            Need help determining?
+          </a>
+          <input type="number" name="bodyCondition" required />
+        </div>
+
+        <input type="submit" value="ADD" />
       </form>
     </div>
   );
